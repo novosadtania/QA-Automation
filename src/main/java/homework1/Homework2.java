@@ -9,6 +9,7 @@ public class Homework2 {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
         driver.get("https://uhomki.com.ua/ru/koshki/1074/");
         driver.findElement(By.xpath( "//a[@class = 'footer__link']")).click();
         Thread.sleep(2000);
