@@ -9,13 +9,18 @@ public class Homework7 {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-
         driver.get("https://www.w3schools.com/");
+//        1
         driver.findElement(By.id("search2")).click();
+//        2
         driver.findElement(By.id("learntocode_searchbtn")).click();
+//        3
         driver.findElement(By.id("w3loginbtn")).click();
+//        4
         driver.findElement(By.id("signupbtn_topnav")).click();
+//        5
         driver.findElement(By.id("navbtn_exercises")).click();
+
         driver.quit();
     }
 }
