@@ -4,16 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Homework3 {
+public class Homework4 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get("https://dan-it.com.ua/");
-        driver.findElement(By.xpath( "//a[@class = 'choose-lang__link']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//a[@class = 'main-banner-btn btn-gradient']")).click();
+        driver.get("https://uhomki.com.ua/koshki/1074/");
+        driver.findElement(By.xpath("//span[@class = 'productsMenu-submenu-t']")).click();
         Thread.sleep(2000);
         driver.quit();
     }
