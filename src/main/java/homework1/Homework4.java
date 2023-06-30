@@ -11,7 +11,9 @@ public class Homework4 {
         driver.manage().window().maximize();
 
         driver.get("https://uhomki.com.ua/koshki/1074/");
-        driver.findElement(By.xpath("//span[@class = 'productsMenu-submenu-t']")).click();
+        driver.findElement(By.xpath( "//a[contains(text(), 'Рыбы')]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//img[@alt = 'Аквариумы']")).click();
         Thread.sleep(2000);
         driver.quit();
     }
