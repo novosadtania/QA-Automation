@@ -13,7 +13,7 @@ public class Homework3 {
         driver.get("https://dan-it.com.ua/");
         driver.findElement(By.xpath( "//a[@class = 'choose-lang__link']")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//a[@class = 'main-banner-btn btn-gradient']")).click();
+        driver.findElement(By.xpath("//h1[contains(text() , 'IT-освіта') ]/..//a[@class='main-banner-btn btn-gradient']")).click();
         Thread.sleep(2000);
         driver.quit();
     }

@@ -11,7 +11,7 @@ public class Homework9 {
         driver.manage().window().maximize();
 
         driver.get("https://www.jetbrains.com/idea/");
-        driver.findElement(By.xpath( "//a[contains(@class, 'download-button wt-button')]")).click();
+        driver.findElement(By.xpath( "//a[@href = '/idea/download/']")).click();
         Thread.sleep(5000);
         driver.quit();
     }

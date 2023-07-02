@@ -11,7 +11,7 @@ public class Homework2 {
         driver.manage().window().maximize();
 
         driver.get("https://uhomki.com.ua/ru/koshki/1074/");
-        driver.findElement(By.xpath( "//a[@class = 'footer__link']")).click();
+        driver.findElement(By.xpath( "//div[@class = 'footer__heading']/..//a[@href = '/ru/koshki/1074/']")).click();
         Thread.sleep(2000);
         driver.quit();
     }

@@ -13,9 +13,7 @@ public class Homework8 {
         driver.get("https://dan-it.com.ua/");
         driver.findElement(By.xpath( "//a[@class = 'choose-lang__link']")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath( "//p[@class = 'main-info__text']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath( "//li[@class = 'main-expertise__point'][3]")).click();
+        driver.findElement(By.xpath( "//p[contains(text(),'Міжнародний центр з підготовки IT-фахівців')]/../../..//child::li[3]")).click();
         Thread.sleep(2000);
 
         driver.quit();
