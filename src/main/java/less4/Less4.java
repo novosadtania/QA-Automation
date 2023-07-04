@@ -18,6 +18,7 @@ public class Less4 {
         Thread.sleep(2000);
         System.out.println(driver.getTitle());
         Set<String> window0 = driver.getWindowHandles();
+
         ((JavascriptExecutor)driver).executeScript("window.open()");
         Set<String> window1 = driver.getWindowHandles();
         window1.removeAll(window0);
@@ -26,9 +27,11 @@ public class Less4 {
         driver.get("https://dan-it.com.ua/");
         Thread.sleep(2000);
         System.out.println(driver.getTitle());
+
         ((JavascriptExecutor)driver).executeScript("window.open()");
         Set<String> window2 = driver.getWindowHandles();
         window2.removeAll(window1);
+        window2.removeAll(window0);
         String newWindow2 = window2.iterator().next();
         driver.switchTo().window(newWindow2);
         driver.get("https://www.jetbrains.com/idea/");
