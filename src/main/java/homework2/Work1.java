@@ -6,15 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Set;
-
-/*1)
-Написать программу, которая будет открывать пять различных страниц в новых окнах:
+/*1)Написать программу, которая будет открывать пять различных страниц в новых окнах:
     https://uhomki.com.ua/ru/koshki/1074/
     https://zoo.kiev.ua/
     https://www.w3schools.com/
     https://taxi838.ua/ru/dnepr/
     https://klopotenko.com/
-
 Прописать цикл, который будет переключаться поочередно через все страницы,
 для каждой страницы выводить в консоль название и ссылку на эту страницу.
 И будет закрывать ту страницу в названии которой есть слово зоопарк.*/
