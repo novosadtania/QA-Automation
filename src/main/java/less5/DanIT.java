@@ -19,8 +19,8 @@ public class DanIT {
         Actions actions = new Actions(driver);
         driver.get("https://dan-it.com.ua/uk/");
         actions.moveToElement(driver.findElement((By.xpath("//a[text() = 'Для дітей']")))).pause(Duration.ofSeconds(2)).
-                moveToElement(driver.findElement(By.xpath("//a[text() = 'Академічна вища ІТ освіта']"))).pause(Duration.ofSeconds(2)).
-                click().pause(Duration.ofSeconds(4)).build().perform();
+                moveToElement(driver.findElement(By.xpath("//a[text() = 'Академічна вища ІТ освіта']"))).
+                pause(Duration.ofSeconds(2)).click().pause(Duration.ofSeconds(4)).build().perform();
         driver.quit();
     }
 }

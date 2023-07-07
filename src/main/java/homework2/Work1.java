@@ -17,64 +17,36 @@ import java.util.Set;
 И будет закрывать ту страницу в названии которой есть слово зоопарк.*/
 public class Work1 {
     public static void main(String[] args) throws InterruptedException {
+        String[] url = {"https://uhomki.com.ua/ru/koshki/1074/",
+                "https://zoo.kiev.ua/",
+                "https://www.w3schools.com/",
+                "https://taxi838.ua/ru/dnepr/",
+                "https://klopotenko.com/"};
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
-        driver.get("https://uhomki.com.ua/ru/koshki/1074/");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-        Set<String> window0 = driver.getWindowHandles();
-
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        Set<String> window1 = driver.getWindowHandles();
-        window1.removeAll(window0);
-        String newWindow1 = window1.iterator().next();
-        driver.switchTo().window(newWindow1);
-        driver.get("https://zoo.kiev.ua/");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        Set<String> window2 = driver.getWindowHandles();
-        window2.removeAll(window1);
-        window2.removeAll(window0);
-        String newWindow2 = window2.iterator().next();
-        driver.switchTo().window(newWindow2);
-        driver.get("https://www.w3schools.com/");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        Set<String> window3 = driver.getWindowHandles();
-        window3.removeAll(window1);
-        window3.removeAll(window0);
-        window3.removeAll(window2);
-        String newWindow3 = window3.iterator().next();
-        driver.switchTo().window(newWindow3);
-        driver.get("https://taxi838.ua/ru/dnepr/");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        Set<String> window4 = driver.getWindowHandles();
-        window4.removeAll(window1);
-        window4.removeAll(window0);
-        window4.removeAll(window2);
-        window4.removeAll(window3);
-        String newWindow4 = window4.iterator().next();
-        driver.switchTo().window(newWindow4);
-        driver.get("https://klopotenko.com/");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
+        driver.get(url[0]);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(driver.getTitle());
+            System.out.println(driver.getCurrentUrl());
+            Set<String> set1 = driver.getWindowHandles();
+            if (i + 1 == 5) {
+                break;
+            }
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            Set<String> set2 = driver.getWindowHandles();
+            set2.removeAll(set1);
+            String descriptor2 = set2.iterator().next();
+            if (driver.getTitle().contains("зоопарк")) {
+                driver.close();
+            }
+            driver.switchTo().window(descriptor2);
+            driver.get(url[i + 1]);
+        }
         driver.quit();
     }
-
 }
+
