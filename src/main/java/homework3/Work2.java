@@ -52,17 +52,12 @@ public class Work2 {
         Thread.sleep(6000);
         WebElement tspan4 = driver.findElement(By.tagName("tspan"));
         WebElement path4 = driver.findElement(By.tagName("path"));
-        Thread.sleep(2000);
-       /* WebElement circle3 = driver.findElements(By.tagName("circle")).get(2);
-        int centreX = circle3.getLocation().x + (circle3.getSize().width)/2;
-        int centreY = circle3.getLocation().y + (circle3.getSize().height)/2;
-        System.out.println("Coordination of centre x "+ centreX);
-        System.out.println("Coordination of centre y "+ centreY);*/
+        WebElement circles = driver.findElements(By.tagName("circle")).get(2);
         actions.moveToElement(tspan4).pause(Duration.ofSeconds(2)).clickAndHold()
-                .moveToElement(path4,500,52).release()
+                .moveToElement(circles).click().release()
                 .build().perform();
         Thread.sleep(4000);
-        driver.quit();
+//        driver.quit();
 
 }}
 
