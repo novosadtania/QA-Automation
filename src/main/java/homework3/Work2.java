@@ -22,15 +22,47 @@ public class Work2 {
         driver.manage().window().maximize();
         Actions actions = new Actions(driver);
         driver.navigate().to("http://www.ashortjourney.com/");
-        Thread.sleep(5000);
-        WebElement circle = driver.findElement(By.tagName("path"));
+        Thread.sleep(6000);
         WebElement tspan = driver.findElement(By.tagName("tspan"));
-        /*actions.dragAndDrop(tspan,circle).perform();*/
+        WebElement path = driver.findElement(By.tagName("path"));
         actions.moveToElement(tspan).clickAndHold()
-                .moveToElement(circle,702,191).release()
+                .moveToElement(path,702,191).release()
                 .build().perform();
 
+        Thread.sleep(6000);
+        WebElement cirkle = driver.findElements(By.tagName("circle")).get(2);
+        Thread.sleep(4000);
+        WebElement tspan2 = driver.findElement(By.tagName("tspan"));
+        WebElement path2 = driver.findElement(By.tagName("path"));
+        actions.moveToElement(tspan2).pause(Duration.ofSeconds(2)).clickAndHold()
+                .moveToElement(path2,485,267).release()
+                .build().perform();
 
+        Thread.sleep(6000);
+        /*WebElement circle3 = driver.findElements(By.tagName("circle")).get(2);
+        System.out.println(circle3.getLocation().x);
+        System.out.println(circle3.getLocation().y);*/
+        WebElement tspan3 = driver.findElement(By.tagName("tspan"));
+        WebElement path3 = driver.findElement(By.tagName("path"));
+        Thread.sleep(2000);
+        actions.moveToElement(tspan3).pause(Duration.ofSeconds(2)).clickAndHold()
+                .moveToElement(path3,485,267).release()
+                .build().perform();
+
+        Thread.sleep(6000);
+        WebElement tspan4 = driver.findElement(By.tagName("tspan"));
+        WebElement path4 = driver.findElement(By.tagName("path"));
+        Thread.sleep(2000);
+       /* WebElement circle3 = driver.findElements(By.tagName("circle")).get(2);
+        int centreX = circle3.getLocation().x + (circle3.getSize().width)/2;
+        int centreY = circle3.getLocation().y + (circle3.getSize().height)/2;
+        System.out.println("Coordination of centre x "+ centreX);
+        System.out.println("Coordination of centre y "+ centreY);*/
+        actions.moveToElement(tspan4).pause(Duration.ofSeconds(2)).clickAndHold()
+                .moveToElement(path4,500,52).release()
+                .build().perform();
+        Thread.sleep(4000);
+        driver.quit();
 
 }}
 
