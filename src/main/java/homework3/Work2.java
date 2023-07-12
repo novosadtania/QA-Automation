@@ -69,7 +69,7 @@ public class Work2 {
         Thread.sleep(4000);
         WebElement text = driver.findElement(By.tagName("textarea"));
         text.sendKeys("Завдання виконано!!!");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         driver.quit();
     }
 }
