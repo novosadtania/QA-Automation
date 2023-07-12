@@ -9,8 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
-import static javax.swing.UIManager.get;
-
 /*2) http://www.ashortjourney.com/
 Написать программу, которая будет автоматизировать сценарий показанный на видео "Сценарий для автоматизии.mp4".*/
 public class Work2 {
@@ -26,39 +24,53 @@ public class Work2 {
         WebElement tspan = driver.findElement(By.tagName("tspan"));
         WebElement path = driver.findElement(By.tagName("path"));
         actions.moveToElement(tspan).clickAndHold()
-                .moveToElement(path,702,191).release()
+                .moveToElement(path, 702, 191).release()
                 .build().perform();
 
-        Thread.sleep(6000);
+        Thread.sleep(4000);
         WebElement tspan2 = driver.findElement(By.tagName("tspan"));
         WebElement path2 = driver.findElement(By.tagName("path"));
         actions.moveToElement(tspan2).pause(Duration.ofSeconds(2)).clickAndHold()
-                .moveToElement(path2,485,267).release()
+                .moveToElement(path2, 485, 267).release()
                 .build().perform();
 
-        Thread.sleep(6000);
-        /*WebElement circle3 = driver.findElements(By.tagName("circle")).get(2);
-        System.out.println(circle3.getLocation().x);
-        System.out.println(circle3.getLocation().y);*/
+        Thread.sleep(4000);
         WebElement tspan3 = driver.findElement(By.tagName("tspan"));
         WebElement path3 = driver.findElement(By.tagName("path"));
         Thread.sleep(2000);
-        actions.moveToElement(tspan3).pause(Duration.ofSeconds(2)).clickAndHold()
-                .moveToElement(path3,485,267).release()
+        actions.moveToElement(tspan3).clickAndHold()
+                .moveToElement(path3, 485, 267).release()
                 .build().perform();
 
-        Thread.sleep(6000);
+        Thread.sleep(4000);
         WebElement tspan4 = driver.findElement(By.tagName("tspan"));
-        WebElement path4 = driver.findElement(By.tagName("path"));
-        WebElement cirkle = driver.findElements(By.tagName("circle")).get(2);
-        int centreX = cirkle.getLocation().x + (cirkle.getSize().width) / 2;
-        int centreY = cirkle.getLocation().y + (cirkle.getSize().height) / 2;
-        Thread.sleep(2000);
-        actions.moveToElement(tspan4).pause(Duration.ofSeconds(2)).clickAndHold()
-                .moveToElement(cirkle,centreX,centreY).click().release()
+        actions.moveToElement(tspan4).clickAndHold().
+                moveByOffset(-1222, -359).release()
                 .build().perform();
 
-//        driver.quit();
+        Thread.sleep(5000);
+        WebElement tspan5 = driver.findElement(By.tagName("tspan"));
+        actions.moveToElement(tspan5).clickAndHold().
+                moveByOffset(-1188, -135).release()
+                .build().perform();
 
-}}
+        Thread.sleep(4000);
+        WebElement tspan6 = driver.findElement(By.tagName("tspan"));
+        actions.moveToElement(tspan6).clickAndHold().
+                moveByOffset(1152, -485).release()
+                .build().perform();
+
+        Thread.sleep(4000);
+        WebElement tspan7 = driver.findElement(By.tagName("tspan"));
+        actions.moveToElement(tspan7).clickAndHold().
+                moveByOffset(401, -485).release()
+                .build().perform();
+
+        Thread.sleep(4000);
+        WebElement text = driver.findElement(By.tagName("textarea"));
+        text.sendKeys("Завдання виконано!!!");
+        Thread.sleep(8000);
+        driver.quit();
+    }
+}
 
