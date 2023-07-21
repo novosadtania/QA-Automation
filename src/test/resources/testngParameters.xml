@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTestCases">
+        <parameter name="seachWord" value="iphone8"/>
+        <classes>
+            <class name="fromSLess9.Parameters"/>
+        </classes>
+    </test>
+</suite>

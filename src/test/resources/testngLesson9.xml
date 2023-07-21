@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTestCases">
+        <groups>
+            <run>
+                <include name = "first"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="fromSLess9.Test2"/>
+        </classes>
+    </test>
+
+    <test name="AllTestCases2">
+        <groups>
+            <run>
+                <include name = "second"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="fromSLess9.Test2"/>
+        </classes>
+    </test>
+</suite>
