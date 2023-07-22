@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTestCases">
+        <parameter name="searchWord" value="машина"/>
+    <parameter name="searchWord2" value="машина2"/>
+        <parameter name="searchWord3" value="машина3"/>
+        <classes>
+            <class name="homework9.foxtrot.Foxtrot2"/>
+        </classes>
+    </test>
+</suite>
