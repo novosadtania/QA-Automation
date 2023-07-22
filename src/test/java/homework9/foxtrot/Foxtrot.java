@@ -15,13 +15,14 @@ import static org.testng.Assert.assertTrue;
 
 public class Foxtrot {
     @DataProvider(name = "Words")
-    public Object[] createData2(){
+    public Object[] createData2() {
         return new Object[]{
                 "машина",
                 "input",
                 "смысл"
         };
     }
+
     @Test(dataProvider = "Words")
     public void findElement(String word) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
@@ -39,17 +40,14 @@ public class Foxtrot {
 
         WebElement resultLine = waiters.waitForVisabilityOfWebElementReturn(By.xpath("//div[@class = 'page__title']//h1"));
         String result = resultLine.getText();
-        System.out.println(result);
-        if(result.contains("Знайдено")) {
+        if (result.contains("Знайдено")) {
             WebElement resultString = waiters.waitForVisabilityOfWebElementReturn(By.xpath("//div[@class = 'page__title']//h1"));
             String wordResult = resultString.getText().split("\\ запиту ")[1];
-            System.out.println(word);
-            assertTrue(result.contains("«" + word +"»"));
-        }else {
+            assertTrue(result.contains("«" + word + "»"));
+        } else {
             WebElement nothingNotFound = driver.findElement(By.className("search-page__box-title"));
             String nothing = nothingNotFound.getText().split("\\запитом ")[1].split("\\ нічого")[0];
-            System.out.println(nothing);
-            assertEquals(nothing,"«смысл»" );
+            assertEquals(nothing, "«смысл»");
         }
         driver.quit();
     }

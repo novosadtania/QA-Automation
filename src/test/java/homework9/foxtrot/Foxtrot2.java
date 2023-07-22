@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -15,8 +14,8 @@ import static org.testng.Assert.assertTrue;
 
 public class Foxtrot2 {
     @Test
-    @org.testng.annotations.Parameters({"searchWord" ,"searchWord"})
-    public void findElement(String searchWord){
+    @org.testng.annotations.Parameters({"searchWord"})
+    public void findElement(String searchWord) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\AdminP\\Desktop\\Selen\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -32,17 +31,14 @@ public class Foxtrot2 {
 
         WebElement resultLine = waiters.waitForVisabilityOfWebElementReturn(By.xpath("//div[@class = 'page__title']//h1"));
         String result = resultLine.getText();
-        System.out.println(result);
-        if(result.contains("Знайдено")) {
+        if (result.contains("Знайдено")) {
             WebElement resultString = waiters.waitForVisabilityOfWebElementReturn(By.xpath("//div[@class = 'page__title']//h1"));
             String wordResult = resultString.getText().split("\\ запиту ")[1];
-            System.out.println(searchWord);
-            assertTrue(result.contains("«" + searchWord +"»"));
-        }else {
+            assertTrue(result.contains("«" + searchWord + "»"));
+        } else {
             WebElement nothingNotFound = driver.findElement(By.className("search-page__box-title"));
             String nothing = nothingNotFound.getText().split("\\запитом ")[1].split("\\ нічого")[0];
-            System.out.println(nothing);
-            assertEquals(nothing,"«смысл»" );
+            assertEquals(nothing, "«смысл»");
         }
         driver.quit();
     }
